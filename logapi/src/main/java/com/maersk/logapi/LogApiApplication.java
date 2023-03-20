@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LogapiApplication {
+public class LogApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LogapiApplication.class, args);
+		SpringApplication.run(LogApiApplication.class, args);
 	}
 
 }
