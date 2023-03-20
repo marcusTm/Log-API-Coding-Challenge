@@ -1,0 +1,15 @@
+Assumptions:
+I can just publish the entries to some RabbitMQ exchange
+I will for simplicity just use h2 as the database (can easily be changed)
+I will skip implementation of integration and component tests and just focus on unit tests
+
+
+Process:
+1) Create spring boot app
+2) Implement REST API + tests 
+3) Store log entries in database (h2)
+4) Publish log entries to RabbitMQ exchange
+5) Implement load tests (maybe using JMeter or threads)
+6) Based on load tests maybe change implementation to be async
+
+
