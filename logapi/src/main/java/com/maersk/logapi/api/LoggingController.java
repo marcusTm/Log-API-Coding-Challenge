@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("v1/log-entries")
@@ -16,6 +17,12 @@ import java.util.List;
 public class LoggingController {
 
     private final LoggingService service;
+
+    @Operation(summary = "Retrieve log entries for a given trace ordered by timestamp")
+    @GetMapping
+    public List<LogEntry> getLogEntries(@RequestParam UUID traceId){
+        return service.retrieveLogEntries(traceId);
+    }
 
     @Operation(summary = "Add entry to log")
     @PostMapping

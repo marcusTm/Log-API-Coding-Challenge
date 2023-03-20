@@ -7,8 +7,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -40,5 +44,19 @@ class LogToRepositoryServiceTest {
 
         //Then
         verify(logEntryRepository).saveAll(entries);
+    }
+
+    @Test
+    void getLogsOrderedByTimestamp() {
+        //Given
+        UUID traceId = UUID.randomUUID();
+        List<LogEntry> relevantLogEntries = Arrays.asList(new LogEntry(), new LogEntry());
+        given(logEntryRepository.findByTraceIdOrderByTimestampDesc(traceId)).willReturn(relevantLogEntries);
+
+        //When
+        List<LogEntry> result = service.getLogsOrderedByTimestamp(traceId);
+
+        //Then
+        assertEquals(relevantLogEntries, result);
     }
 }
