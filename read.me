@@ -13,3 +13,9 @@ Process:
 6) Based on load tests maybe change implementation to be async
 
 
+Note on how to run RabbitMQ server locally (using docker):
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-management
+
+Credentials: 
+ user: guest
+ password: guest

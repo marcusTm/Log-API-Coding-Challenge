@@ -28,7 +28,6 @@ class LogToRepositoryServiceTest {
 
         //Then
         verify(logEntryRepository).save(entry);
-
     }
 
     @Test
