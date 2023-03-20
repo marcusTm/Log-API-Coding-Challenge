@@ -1,4 +1,10 @@
 package com.maersk.logapi.domain;
 
-public class LogSeverityLevel {
+public enum LogSeverityLevel {
+    DEFAULT,
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
+    CRITICAL
 }
