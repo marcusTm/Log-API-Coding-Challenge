@@ -23,13 +23,13 @@ I was able to do a quick load test of the application using JMeter.
 Initial test: 
 At the first couple of tests the latency time was on average 11 ms for each request.
 
-Test 1:
+**Test 1:**
 Each thread (users) sends 1 request. The ramp-up period is 1 s.
 For the load test with 10, 100, and 1000 users (threads) the latency is around to 2-3 ms.
 The app seems to be able to handle this load successfully but this is also because we use h2 which is an in-memory database
 and we run rabbitMQ locally. Thus we avoid the network. 
 
-Test 2:
+**Test 2:**
 To make sure the threads do send the requests concurrently we change it so each thread sends 5 requests instead of 1.
 Now we can see that the latency increases quite drastically. 
 For the test with 100 users the average is still 2 ms. 
@@ -39,8 +39,8 @@ Thus we can see how the application starts to struggle. However, the application
 ## Running rabbitmq locally
 
 Note on how to run RabbitMQ server locally (using docker):
-docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-management
+```docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11-management```
 
 Credentials: 
- user: guest
- password: guest
+- user: guest
+- password: guest
