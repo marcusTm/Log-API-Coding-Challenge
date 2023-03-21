@@ -2,9 +2,9 @@
 
 
 ## Assumptions:
-I can just publish the entries to some RabbitMQ exchange
-I will for simplicity just use h2 as the database (can easily be changed)
-I will skip implementation of integration and component tests and just focus on unit tests.
+- I can just publish the entries to some RabbitMQ exchange
+- I will for simplicity just use h2 as the database (can easily be changed)
+- I will skip implementation of integration and component tests and just focus on unit tests.
 (I did the integration tests manually instead).
 
 
